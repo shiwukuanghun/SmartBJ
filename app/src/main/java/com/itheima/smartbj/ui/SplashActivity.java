@@ -1,6 +1,6 @@
 package com.itheima.smartbj.ui;
 
-import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -9,11 +9,11 @@ import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
 import com.itheima.smartbj.BaseActivity;
+import com.itheima.smartbj.MainActivity;
 import com.itheima.smartbj.R;
+import com.itheima.smartbj.utils.SPUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-
 
 
 /**
@@ -30,14 +30,6 @@ public class SplashActivity extends BaseActivity {
     @Override
     public int getLayoutResId() {
         return R.layout.activity_splash;
-    }
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
     }
 
     protected  void init() {
@@ -66,5 +58,32 @@ public class SplashActivity extends BaseActivity {
         animationSet.addAnimation(alphaAnimation);
         animationSet.setDuration(ANIMATION_DURATION);
         mSplashImage.startAnimation(animationSet);
+        animationSet.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                SystemClock.sleep(500);
+                //动画播放完毕后消失
+               /* Intent intent = new Intent(SplashActivity.this, TutorialActivity.class);
+                startActivity(intent);
+                finish();*/
+                //如果第一次进来就进入向导页，否则直接进入主页，获取状态是否保存进入过
+                boolean started = SPUtils.getBoolean(SplashActivity.this, "started", false);
+                if(started == true) { //已经进入过
+                    navigateTo(MainActivity.class);
+                } else {
+                    navigateTo(TutorialActivity.class);
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 }
