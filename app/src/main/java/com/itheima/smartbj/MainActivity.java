@@ -11,7 +11,7 @@ import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 public class MainActivity extends SlidingFragmentActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {  //注意：要用只有一个参数的
         super.onCreate(savedInstanceState);
         initLeftMenu();
         initSlidingMenu();
