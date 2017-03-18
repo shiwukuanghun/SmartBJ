@@ -1,4 +1,4 @@
-package com.itheima.smartbj.ui;
+package com.itheima.smartbj.ui.activity;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.itheima.smartbj.BaseActivity;
-import com.itheima.smartbj.MainActivity;
 import com.itheima.smartbj.R;
 import com.itheima.smartbj.utils.SPUtils;
 import com.viewpagerindicator.CirclePageIndicator;

@@ -1,4 +1,4 @@
-package com.itheima.smartbj.ui;
+package com.itheima.smartbj.ui.activity;
 
 import android.os.SystemClock;
 import android.view.animation.AlphaAnimation;
@@ -8,8 +8,6 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
-import com.itheima.smartbj.BaseActivity;
-import com.itheima.smartbj.MainActivity;
 import com.itheima.smartbj.R;
 import com.itheima.smartbj.utils.SPUtils;
 

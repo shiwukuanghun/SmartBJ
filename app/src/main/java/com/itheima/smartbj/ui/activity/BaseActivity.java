@@ -1,4 +1,4 @@
-package com.itheima.smartbj;
+package com.itheima.smartbj.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
