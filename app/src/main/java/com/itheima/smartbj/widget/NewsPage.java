@@ -7,7 +7,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.itheima.smartbj.R;
 import com.viewpagerindicator.TabPageIndicator;
@@ -56,10 +55,12 @@ public class NewsPage extends RelativeLayout {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            TextView textView = new TextView(getContext());
+            /*TextView textView = new TextView(getContext());
             textView.setText(CONTENT[position]);
-            container.addView(textView);
-            return textView;
+            container.addView(textView);*/
+            NewsPullToRefreshListView newsPullToRefreshListView = new NewsPullToRefreshListView(getContext());
+            container.addView(newsPullToRefreshListView);
+            return newsPullToRefreshListView;
         }
 
         @Override
